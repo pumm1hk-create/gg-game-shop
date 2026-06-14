@@ -44,7 +44,7 @@ html_content = """<!DOCTYPE html>
             <h3 style="margin-bottom:15px;">🛍️ ไอดีเกม</h3>
             
             <div class="box">
-                <img src="https://i.imgur.com/B9O0Wsc.jpeg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
+                <img src="https://pub-c5e31b5cdafb419a9104711b4334f595.r2.dev/grow_a_garden2.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
                 <h4>ID ROBLOX grow a garden 2</h4>
                 <p style="color:#aaa; font-size:0.85rem;">ไก่แมพ grow a garden 2</p>
                 <div class="price">49 บาท</div>
@@ -52,7 +52,7 @@ html_content = """<!DOCTYPE html>
             </div>
             
             <div class="box">
-                <img src="https://i.imgur.com/B9O0Wsc.jpeg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
+                <img src="https://pub-c5e31b5cdafb419a9104711b4334f595.r2.dev/grow_a_garden2.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
                 <h4>ID ROBLOX grow a garden 2</h4>
                 <p style="color:#aaa; font-size:0.85rem;">มีเงินในเกมเยอะ</p>
                 <div class="price">29 บาท</div>
