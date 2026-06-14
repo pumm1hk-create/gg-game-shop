@@ -44,7 +44,7 @@ html_content = """<!DOCTYPE html>
             <h3 style="margin-bottom:15px;">🛍️ ไอดีเกม</h3>
             
             <div class="box">
-                <img src="/get_image/pic.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
+                <img src="https://share.google/SzjaM63VVtoNem3hfclass="product-img" alt="ID ROBLOX Grow a Garden 2">
                 <h4>ID ROBLOX grow a garden 2</h4>
                 <p style="color:#aaa; font-size:0.85rem;">ไก่แมพ grow a garden 2</p>
                 <div class="price">49 บาท</div>
