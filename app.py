@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, send_from_directory
 
 app = Flask(__name__)
 
@@ -44,7 +44,7 @@ html_content = """<!DOCTYPE html>
             <h3 style="margin-bottom:15px;">🛍️ ไอดีเกม</h3>
             
             <div class="box">
-                <img src="https://pub-c5e31b5cdafb419a9104711b4334f595.r2.dev/grow_a_garden2.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
+                <img src="/get_image/pic.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
                 <h4>ID ROBLOX grow a garden 2</h4>
                 <p style="color:#aaa; font-size:0.85rem;">ไก่แมพ grow a garden 2</p>
                 <div class="price">49 บาท</div>
@@ -52,7 +52,7 @@ html_content = """<!DOCTYPE html>
             </div>
             
             <div class="box">
-                <img src="https://pub-c5e31b5cdafb419a9104711b4334f595.r2.dev/grow_a_garden2.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
+                <img src="/get_image/pic.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
                 <h4>ID ROBLOX grow a garden 2</h4>
                 <p style="color:#aaa; font-size:0.85rem;">มีเงินในเกมเยอะ</p>
                 <div class="price">29 บาท</div>
@@ -128,6 +128,10 @@ html_content = """<!DOCTYPE html>
 @app.route('/')
 def home():
     return html_content
+
+@app.route('/get_image/<filename>')
+def get_image(filename):
+    return send_from_directory(os.getcwd(), filename)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
