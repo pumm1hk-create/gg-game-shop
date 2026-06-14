@@ -20,7 +20,8 @@ html_content = """<!DOCTYPE html>
         nav a:hover { background:#ff4757; }
         .container { max-width:500px; margin:20px auto; }
         .page { display:none; } .page.active { display:block; }
-        .box { background:#1a1a1e; padding:20px; border-radius:8px; border:1px solid #2f2f35; margin-bottom:15px; }
+        .box { background:#1a1a1e; padding:20px; border-radius:8px; border:1px solid #2f2f35; margin-bottom:15px; overflow:hidden; }
+        .product-img { width:100%; height:auto; border-radius:6px; margin-bottom:12px; display:block; }
         .btn { width:100%; background:#ff4757; color:#fff; padding:12px; border:none; border-radius:5px; font-weight:bold; cursor:pointer; text-align:center; display:block; text-decoration:none; margin-top:10px; }
         .price { color:#2ed573; font-weight:bold; margin:5px 0; font-size:1.2rem; }
         .pay-info { display:none; background:#222227; border-left:4px solid #ff4757; padding:15px; border-radius:4px; margin-top:15px; }
@@ -41,17 +42,21 @@ html_content = """<!DOCTYPE html>
     <div class="container">
         <div id="page-home" class="page active">
             <h3 style="margin-bottom:15px;">🛍️ ไอดีเกม</h3>
+            
             <div class="box">
-                <h4>ID ROBLOX grow a garden 2 </h4>
-                <p style="color:#aaa; font-size:0.85rem;">ไก่แมพgrow a garden 2</p>
+                <img src="https://images.squarespace-cdn.com/content/v1/66736d3701256037da5093ee/4e3e3b7b-f633-4fec-8866-9b161c56b3e7/Grow+A+Garden+2+Roblox.jpg" class="product-img" alt="Grow a garden 2">
+                <h4>ID ROBLOX grow a garden 2</h4>
+                <p style="color:#aaa; font-size:0.85rem;">ไก่แมพ grow a garden 2</p>
                 <div class="price">49 บาท</div>
-                <button class="btn" onclick="buyNow( 49 )">ซื้อสินค้า</button>
+                <button class="btn" onclick="buyNow('ID ROBLOX grow a garden 2 (ราคา 49)', 49)">ซื้อสินค้า</button>
             </div>
+            
             <div class="box">
+                <img src="https://images.squarespace-cdn.com/content/v1/66736d3701256037da5093ee/4e3e3b7b-f633-4fec-8866-9b161c56b3e7/Grow+A+Garden+2+Roblox.jpg" class="product-img" alt="Grow a garden 2">
                 <h4>ID ROBLOX grow a garden 2</h4>
                 <p style="color:#aaa; font-size:0.85rem;">มีเงินในเกมเยอะ</p>
                 <div class="price">29 บาท</div>
-                <button class="btn" onclick="buyNow(29)">ซื้อสินค้า</button>
+                <button class="btn" onclick="buyNow('ID ROBLOX grow a garden 2 (ราคา 29)', 29)">ซื้อสินค้า</button>
             </div>
         </div>
         
@@ -106,12 +111,9 @@ html_content = """<!DOCTYPE html>
         }
         function sendAngpao() {
             const link = document.getElementById('angpao-link').value.trim();
-            const title = document.getElementById('checkout-title').innerText;
-            const price = document.getElementById('checkout-price').innerText;
             if(!link) { alert('กรุณาวางลิงก์ซองอั่งเปาก่อนครับ!'); return; }
             if(!link.includes('gift.truemoney.com')) { alert('ลิงก์ไม่ถูกต้อง! ต้องเป็นลิงก์ซองอั่งเปาจาก TrueMoney เท่านั้นครับ'); return; }
             
-            // คัดลอกลิงก์ซองอั่งเปาใส่คลิปบอร์ดให้ลูกค้าอัตโนมัติ
             navigator.clipboard.writeText(link).then(() => {
                 alert('ระบบคัดลอกลิงก์ซองอั่งเปาแล้ว! กำลังพาท่านไปส่งแอดมินในเฟซบุ๊ก ให้กดวาง (Paste) ในแชตได้เลยครับ');
                 window.open('https://www.facebook.com/share/1NwmijHGB5/', '_blank');
