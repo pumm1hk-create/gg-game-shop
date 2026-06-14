@@ -40,18 +40,18 @@ html_content = """<!DOCTYPE html>
     
     <div class="container">
         <div id="page-home" class="page active">
-            <h3 style="margin-bottom:15px;">🛍️ ไอดีเกมแนะนำ</h3>
+            <h3 style="margin-bottom:15px;">🛍️ ไอดีเกม</h3>
             <div class="box">
-                <h4>ID ROBLOX - สายฟาร์มโหด</h4>
-                <p style="color:#aaa; font-size:0.85rem;">เลเวลตัน มีดาบในตำนานครบ พร้อมเล่น</p>
-                <div class="price">350 บาท</div>
-                <button class="btn" onclick="buyNow('ID ROBLOX - สายฟาร์มโหด', 350)">ซื้อสินค้า</button>
+                <h4>ID ROBLOX grow a garden 2 </h4>
+                <p style="color:#aaa; font-size:0.85rem;">ไก่แมพgrow a garden 2</p>
+                <div class="price">49 บาท</div>
+                <button class="btn" onclick="buyNow( 49 )">ซื้อสินค้า</button>
             </div>
             <div class="box">
-                <h4>ID ROBLOX - สายสุ่มผล</h4>
-                <p style="color:#aaa; font-size:0.85rem;">มีเงินในเกมเยอะ มีผลเสือ ผลโมจิในคลัง</p>
-                <div class="price">150 บาท</div>
-                <button class="btn" onclick="buyNow('ID ROBLOX - สายสุ่มผล', 150)">ซื้อสินค้า</button>
+                <h4>ID ROBLOX grow a garden 2</h4>
+                <p style="color:#aaa; font-size:0.85rem;">มีเงินในเกมเยอะ</p>
+                <div class="price">29 บาท</div>
+                <button class="btn" onclick="buyNow(29)">ซื้อสินค้า</button>
             </div>
         </div>
         
