@@ -25,6 +25,7 @@ html_content = """<!DOCTYPE html>
         .price { color:#2ed573; font-weight:bold; margin:5px 0; font-size:1.2rem; }
         .pay-info { display:none; background:#222227; border-left:4px solid #ff4757; padding:15px; border-radius:4px; margin-top:15px; }
         .pay-info.active { display:block; }
+        .input-angpao { width:100%; padding:10px; background:#121214; border:1px solid #2f2f35; border-radius:5px; color:#fff; margin-top:10px; outline:none; font-size:0.9rem; }
     </style>
 </head>
 <body>
@@ -60,22 +61,24 @@ html_content = """<!DOCTYPE html>
                 <h4 id="checkout-title">ชื่อสินค้า</h4>
                 <div class="price" style="margin-bottom:15px;">ยอดที่ต้องโอน: <span id="checkout-price">0</span> บาท</div>
                 <button class="btn" style="background:#00a950;" onclick="showPay('kbank')">🟢 โอนผ่าน กสิกรไทย</button>
-                <button class="btn" style="background:#ff8c00;" onclick="showPay('wallet')">🟠 โอนผ่าน ทูมันนี่ วอลเล็ท</button>
+                <button class="btn" style="background:#ff8c00;" onclick="showPay('wallet')">🟠 จ่ายผ่าน ลิงก์ซองอั่งเปา</button>
                 
                 <div id="pay-kbank-info" class="pay-info">
                     <p style="color:#00a950; font-weight:bold;">ธนาคารกสิกรไทย</p>
                     <p style="font-size:1.4rem; font-weight:bold; margin:5px 0;">222-3-21925-3</p>
                     <p style="color:#ccc; font-size:0.85rem;">ชื่อบัญชี: ณัฐภูมิ</p>
+                    <p style="color:#ff9f43; font-size:0.85rem; margin-top:10px; text-align:center;">⚠️ โอนเสร็จแล้ว ส่งภาพสลิปให้แอดมินในแชตได้เลย</p>
+                    <a href="https://www.facebook.com/share/1NwmijHGB5/" target="_blank" class="btn" style="background:#2ed573;">📲 ส่งสลิปแจ้งแอดมิน</a>
                 </div>
+
                 <div id="pay-wallet-info" class="pay-info">
-                    <p style="color:#ff8c00; font-weight:bold;">ทูมันนี่ วอลเล็ท</p>
-                    <p style="font-size:1.4rem; font-weight:bold; margin:5px 0;">090-946-5370</p>
-                    <p style="color:#ccc; font-size:0.85rem;">ชื่อบัญชี: ณัฐภูมิ เขียววารี</p>
+                    <p style="color:#ff8c00; font-weight:bold;">🧧 ชำระด้วยซองอั่งเปา TrueMoney</p>
+                    <p style="color:#aaa; font-size:0.85rem; margin-top:5px;">วิธีจ่าย: สร้างซองอั่งเปาในแอปวอลเล็ทตามราคาสินค้า (เลือกแบบแบ่งเงินเท่ากัน ใส่จำนวนคนรับ 1 คน) แล้วคัดลอกลิงก์มาวางในช่องด้านล่างนี้ครับ</p>
+                    <input type="text" id="angpao-link" class="input-angpao" placeholder="วางลิงก์ซองอั่งเปาที่นี่ (https://gift.truemoney.com/...)" required>
+                    <button class="btn" style="background:#ff8c00;" onclick="sendAngpao()">📲 ส่งข้อมูลซองอั่งเปาให้แอดมิน</button>
                 </div>
                 
                 <hr style="border:none; border-top:1px solid #2f2f35; margin:20px 0;">
-                <p style="color:#ff9f43; font-size:0.85rem; text-align:center; margin-bottom:10px;">⚠️ โอนเสร็จแล้ว ส่งสลิปมาที่เฟซบุ๊กได้เลย!</p>
-                <a href="https://www.facebook.com/share/1NwmijHGB5/" target="_blank" class="btn" style="background:#2ed573;">📲 ส่งสลิปแจ้งแอดมิน</a>
                 <button class="btn" style="background:#444;" onclick="switchPage('home')">กลับหน้าร้าน</button>
             </div>
         </div>
@@ -100,6 +103,21 @@ html_content = """<!DOCTYPE html>
         function showPay(type) {
             document.querySelectorAll('.pay-info').forEach(e => e.classList.remove('active'));
             document.getElementById('pay-' + type + '-info').classList.add('active');
+        }
+        function sendAngpao() {
+            const link = document.getElementById('angpao-link').value.trim();
+            const title = document.getElementById('checkout-title').innerText;
+            const price = document.getElementById('checkout-price').innerText;
+            if(!link) { alert('กรุณาวางลิงก์ซองอั่งเปาก่อนครับ!'); return; }
+            if(!link.includes('gift.truemoney.com')) { alert('ลิงก์ไม่ถูกต้อง! ต้องเป็นลิงก์ซองอั่งเปาจาก TrueMoney เท่านั้นครับ'); return; }
+            
+            // คัดลอกลิงก์ซองอั่งเปาใส่คลิปบอร์ดให้ลูกค้าอัตโนมัติ
+            navigator.clipboard.writeText(link).then(() => {
+                alert('ระบบคัดลอกลิงก์ซองอั่งเปาแล้ว! กำลังพาท่านไปส่งแอดมินในเฟซบุ๊ก ให้กดวาง (Paste) ในแชตได้เลยครับ');
+                window.open('https://www.facebook.com/share/1NwmijHGB5/', '_blank');
+            }).catch(() => {
+                window.open('https://www.facebook.com/share/1NwmijHGB5/', '_blank');
+            });
         }
     </script>
 </body>
