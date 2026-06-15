@@ -79,17 +79,17 @@ html_content = """<!DOCTYPE html>
             <div class="box">
                 <img src="/get_image/pic.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
                 <h4>ID ROBLOX grow a garden 2</h4>
-                <p style="color:#aaa; font-size:0.85rem;">ไก่แมพ grow a garden 2</p>
+                <p style="color:#aaa; font-size:0.85rem;">ไก่แมพพร้อมเล่นเงิน1m+ grow a garden 2</p>
                 <div class="price">49 บาท</div>
-                <button class="btn" onclick="buyNow('ID ROBLOX grow a garden 2 (ราคา 49)', 49)">ซื้อสินค้า</button>
+                <button class="btn" onclick="buyNow('ID ROBLOX grow a garden 2 (ราคา 29)', 29)">ซื้อสินค้า</button>
             </div>
             
             <div class="box">
-                <img src="/get_image/pic.jpg" class="product-img" alt="ID ROBLOX Grow a Garden 2">
-                <h4>ID ROBLOX grow a garden 2</h4>
-                <p style="color:#aaa; font-size:0.85rem;">มีเงินในเกมเยอะ</p>
+                <img src="/get_image/pic.jpg" class="product-img" alt="ID ROBLOX ยังไม่มีสินค้า">
+                <h4>/h4>
+                <p style="color:#aaa; font-size:0.85rem;"></p>
                 <div class="price">29 บาท</div>
-                <button class="btn" onclick="buyNow('ID ROBLOX grow a garden 2 (ราคา 29)', 29)">ซื้อสินค้า</button>
+                <button class="btn" onclick="buyNow('ID ROBLOX (ราคา XX)',ซื้อสินค้าสินค้า</button>
             </div>
         </div>
         
